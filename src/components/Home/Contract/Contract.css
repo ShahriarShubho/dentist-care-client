@@ -1,0 +1,27 @@
+.contract-container {
+    height:630px;
+    width:100%;
+    position:relative;
+    background-image: url(../../../images/chairBg.png);
+    background-size: cover;
+    text-align: center;
+    margin-top : 100px;
+    color: whitesmoke;
+    margin-bottom : 30px
+}
+.contract-container::after{
+    height:100%;
+    content:' ';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    right: 0;
+    background-color: #3A4256;
+    opacity: 9;
+    z-index: -50;
+}
+
+.contract-form{
+    width: 50%;
+    margin : auto;
+}

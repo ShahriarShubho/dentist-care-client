@@ -1,24 +1,47 @@
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from "./components/Home/Home/Home";
+import Appointment from "./components/Appointment/Appointment/Appoinment";
+import Dashboard from "./components/DashBoard/Dashboard/Dashboard";
+import AddDoctor from "./components/AddDoctor/AddDoctor";
+import AllPatient from "./components/AllPatient/AllPatient";
+import { createContext, useState } from "react";
+import LogIn from "./components/LogIn/LogIn";
 
+
+export const UserContext = createContext()
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({})
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+        <Home/>
+        </Route>
+        <Route path="/appointment">
+          <Appointment/>
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard/>
+        </Route>
+        <Route path="/addDoctor">
+         <AddDoctor/>
+        </Route>
+        <Route path="/allPatient">
+         <AllPatient/>
+        </Route>
+        <Route path="/login">
+         <LogIn/>
+        </Route>
+      </Switch> 
+    </Router>
+    </UserContext.Provider>
   );
 }
 
