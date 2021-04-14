@@ -3,12 +3,21 @@ import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog, faSignOutAlt, faCalendar, faHome, faGripHorizontal, faUserPlus, faUsers } from '@fortawesome/free-solid-svg-icons';
-// import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
-// import { UserContext } from '../../../App';
+import { UserContext } from '../../../App';
+
 
 const Sidebar = () => {
-    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [isDoctor, setIsDoctor] = useState(false);
+    useEffect(() => {
+        fetch('http://localhost:5000/isDoctors', {
+            method: 'POST',
+            headers: {'Content-Type' : 'application/json'},
+            body : JSON.stringify({email : loggedInUser.email})
+        })
+        .then(response => response.json())
+        .then(data => setIsDoctor(data))
+    }, [])
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}>
         <ul className="list-unstyled">
@@ -22,7 +31,8 @@ const Sidebar = () => {
                     <FontAwesomeIcon icon={faHome} /> <span>Home</span>
                 </Link>
             </li>
-            <div>
+
+           { isDoctor && <div>
                 <li>
                     <Link to="/allPatients" className="text-white">
                         <FontAwesomeIcon icon={faCalendar} /> <span>Appointments</span>
@@ -35,7 +45,7 @@ const Sidebar = () => {
                 </li>
                 <li>
                     <Link to="/prescriptions" className="text-white">
-                        {/* <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span> */}
+                        <span>Prescriptions</span>
                     </Link>
                 </li>
                 <li>
@@ -48,7 +58,7 @@ const Sidebar = () => {
                         <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
                     </Link>
                 </li>
-            </div>
+            </div>}
         </ul>
         <div>
             <Link to="/" className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>

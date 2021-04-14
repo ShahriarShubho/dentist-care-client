@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import doctor from '../../../images/doctor - Copy.png'
 import DoctorsDetails from '../DoctorsDetails/DoctorsDetails';
 
 const Doctors = () => {
