@@ -1,5 +1,5 @@
 .appointments {
-    height:375px;
+    height:425px;
     width:100%;
     position:relative;
     background-image: url(../../../images/chairBg.png);
@@ -19,8 +19,23 @@
 
 .doctor{
     transform : translateY(-124px);
-    height : 500px;
+    height : 550px;
 }
 .appointments{
     margin-top: 180px;
 }
+.appointments-img{
+    margin-bottom: -100px;
+}
+
+@media only screen and (max-width: 769px) {
+    .appointmentSection {
+      height: 920px;
+    }
+  }
+
+  @media only screen and (max-width: 769px) {
+    .appointmentSection p,h2{
+      color : black
+    }
+  }

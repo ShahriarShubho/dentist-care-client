@@ -1,10 +1,10 @@
 .header-container {
     height:720px;
     width:100%;
-    position:relative;
     background-image: url(../../../images/chairBg.png);
     background-size: cover;
     z-index: -50;
+
 }
 .header-container::after{
     height:720px;
@@ -14,5 +14,26 @@
     width: 370px;
     right: 0;
     background-color: #3A4256;
-    z-index: -75;
+    z-index: -75;;
 }
+
+@media only screen and (max-width: 989px) {
+    .header-container::after {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 1227px) {
+    .header-container {
+        height:800px;
+    }
+  }
+  @media only screen and (max-width: 769px) {
+    .header-container {
+        height:950px;
+    }
+  }
+  @media only screen and (max-width: 409px) {
+    .header-container {
+        height:1000px;
+    }
+  }

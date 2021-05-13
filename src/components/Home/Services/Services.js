@@ -17,10 +17,22 @@ const Services = () => {
         {
             name: 'Teeth Whiting',
             img : whiting
+        },
+        {
+            name: 'Florid Treatment',
+            img : florid
+        },
+        {
+            name: 'Cavity Felling',
+            img : cavity
+        },
+        {
+            name: 'Teeth Whiting',
+            img : whiting
         }
     ]
     return (
-        <section style={{marginTop: '100px'}} className="text-center">
+        <section id="services" style={{paddingTop: '100px'}} className="text-center bg-light pb-5">
             <h4 style={{color : '#1CC7C1'}}>OUR SERVICES</h4>
             <h2 className="mb-5">Services We Provide</h2>
 

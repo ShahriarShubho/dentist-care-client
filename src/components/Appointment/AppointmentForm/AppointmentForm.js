@@ -23,7 +23,7 @@ const AppointmentForm = ({modalIsOpen, closeModal, booking, date}) => {
         data.appointmentDate = date
         data.createDate = new Date()
 
-        fetch('http://localhost:5000/addAppointments', {
+        fetch('https://dentist-care.herokuapp.com/addAppointments', {
           method : 'POST',
           headers: {'Content-Type' : 'application/json'},
           body: JSON.stringify(data)

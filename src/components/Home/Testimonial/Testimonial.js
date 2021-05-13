@@ -25,9 +25,10 @@ const Testimonial = () => {
     },
 ]
     return (
-        <section className="container mt-5">
+        <section className="bg-light pt-3 testimonial-section">
+            <div className="container">
             <div className="col-md-6">
-                <h6 className="text-info">TESTIMONIAL</h6>
+                <h3 className="text-info">TESTIMONIAL</h3>
                 <h2>What's Our Patients <br/> Says</h2>
             </div>
             <div className="col-md-6">
@@ -36,6 +37,7 @@ const Testimonial = () => {
 
            <div className="row mt-4">
            {testimonialData.map(data=> <TestimonialCard data={data}></TestimonialCard>)}
+           </div>
            </div>
         </section>
     );

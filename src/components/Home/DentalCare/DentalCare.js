@@ -3,6 +3,8 @@ import dental from '../../../images/dental.png'
 
 const DentalCare = () => {
     return (
+        <section className="expectationCard">
+            <div className="container-fluid">
         <div className="row mt-4 pt-5 mr-4">
             <div className="col-md-5 offset-1">
                 <img src={dental} alt="" className="img-fluid"/>
@@ -13,6 +15,8 @@ const DentalCare = () => {
             <button className="btn btn-primary">Learn More</button>
             </div>
         </div>
+        </div>
+        </section>
     );
 };
 

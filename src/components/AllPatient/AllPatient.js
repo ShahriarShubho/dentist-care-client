@@ -5,7 +5,7 @@ import Sidebar from "../DashBoard/SideBar/Sidebar";
 const AllPatient = () => {
   const [patients, setPatients] = React.useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allPatient")
+    fetch("https://dentist-care.herokuapp.com/allPatient")
       .then((res) => res.json())
       .then((data) => setPatients(data));
   }, [patients]);

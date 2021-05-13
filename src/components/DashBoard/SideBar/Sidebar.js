@@ -10,7 +10,7 @@ const Sidebar = () => {
    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [isDoctor, setIsDoctor] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:5000/isDoctors', {
+        fetch('https://dentist-care.herokuapp.com/isDoctors', {
             method: 'POST',
             headers: {'Content-Type' : 'application/json'},
             body : JSON.stringify({email : loggedInUser.email})
@@ -27,24 +27,24 @@ const Sidebar = () => {
                 </Link>
             </li>
             <li>
-                <Link to="/" className="text-white">
+                <Link to="/home" className="text-white">
                     <FontAwesomeIcon icon={faHome} /> <span>Home</span>
                 </Link>
             </li>
 
            { isDoctor && <div>
                 <li>
-                    <Link to="/allPatients" className="text-white">
+                    <Link to="/appointment" className="text-white">
                         <FontAwesomeIcon icon={faCalendar} /> <span>Appointments</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/patient" className="text-white">
+                    <Link to="/allPatient" className="text-white">
                         <FontAwesomeIcon icon={faUsers} /> <span>Patients</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/prescriptions" className="text-white">
+                    <Link to="/#prescriptions" className="text-white">
                         <span>Prescriptions</span>
                     </Link>
                 </li>
@@ -54,7 +54,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/doctor/setting" className="text-white" >
+                    <Link to="/#setting" className="text-white" >
                         <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
                     </Link>
                 </li>

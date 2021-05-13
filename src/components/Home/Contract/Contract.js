@@ -3,7 +3,7 @@ import './Contract.css'
 
 const Contract = () => {
     return (
-        <section className="contract-container">
+        <section id="contract" className="contract-container">
             <h4 className="text-info pt-5">CONTRACT US</h4>
             <h2 className="mb-5">Always Connect With Us</h2>
             <div className="contract-form">
