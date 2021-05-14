@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import chair from '../../../images/chair.png';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HeaderMain = () => {
+    React.useEffect(() => {
+        AOS.init({ duration: 2000 });
+      }, []);
     return (
         <main style={{height: '600px'}} className="row d-flex align-items-center pb-5">
             <div className="col-lg-4 col-md-5 offset-1">
@@ -10,7 +15,7 @@ const HeaderMain = () => {
                 <p className="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi delectus reiciendis totam doloremque numquam inventore provident incidunt!</p>
                 <Link to={'/appointment'}><button className="btn btn-info mb-3">Get Appointment</button></Link>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" data-aos="fade-left">
                 <img src={chair} alt="" className="img-fluid"/>
             </div>
         </main>

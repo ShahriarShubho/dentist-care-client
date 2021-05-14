@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, {useEffect, useContext, useState } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./firebaseConfiq";
@@ -9,12 +9,18 @@ import { useForm } from "react-hook-form";
 import "./LogIn.css";
 import Navbars from "../ShareComonComponents/Navbars/Navbars";
 import Footer from "../ShareComonComponents/Footer/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
 const LogIn = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   let history = useHistory();
   let location = useLocation();
@@ -115,7 +121,7 @@ const LogIn = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-6 m-auto">
-            <div className="logInform">
+            <div data-aos="fade-right" className="logInform">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <h3 className="text-center pb-3">Log In</h3>
                 <input
@@ -178,7 +184,7 @@ const LogIn = () => {
               </button>
             </div>
           </div>
-          <div className="col-md-6">
+          <div data-aos="fade-left" className="col-md-6">
             <img src={logInImg} alt="logIn img" className="img-fluid" />
           </div>
         </div>

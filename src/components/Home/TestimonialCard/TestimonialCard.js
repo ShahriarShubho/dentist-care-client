@@ -1,8 +1,13 @@
 import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const TestimonialCard = ({ data }) => {
+  React.useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
-    <section className="col-md-4">
+    <div data-aos="zoom-in" className="col-md-4">
             <div className="m-2 p-3 shadow border">
             <div>
         <p>{data.quote}</p>
@@ -17,7 +22,7 @@ const TestimonialCard = ({ data }) => {
         </div>
       </div>
             </div>
-    </section>
+    </div>
   );
 };
 

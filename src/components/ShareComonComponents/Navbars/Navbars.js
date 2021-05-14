@@ -1,13 +1,18 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Navbars = () => {
   const styles={ 
     fontSize: '35px',
   }
+  React.useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
     return (
-<Navbar expand="lg">
+<Navbar expand="lg" data-aos="fade-down">
   <Navbar.Brand style={styles} className="font-weight-bold text-info" href="home">Dentist Care</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
