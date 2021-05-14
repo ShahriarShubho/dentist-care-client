@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faSignOutAlt, faCalendar, faHome, faGripHorizontal, faUserPlus, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt, faCalendar, faHome, faGripHorizontal, faUserPlus, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../App';
 
 
@@ -31,31 +31,20 @@ const Sidebar = () => {
                     <FontAwesomeIcon icon={faHome} /> <span>Home</span>
                 </Link>
             </li>
-
-           { isDoctor && <div>
-                <li>
-                    <Link to="/appointment" className="text-white">
+            <li>
+                 <Link to="/appointment" className="text-white">
                         <FontAwesomeIcon icon={faCalendar} /> <span>Appointments</span>
                     </Link>
                 </li>
+           { isDoctor && <div>
                 <li>
                     <Link to="/allPatient" className="text-white">
                         <FontAwesomeIcon icon={faUsers} /> <span>Patients</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/#prescriptions" className="text-white">
-                        <span>Prescriptions</span>
-                    </Link>
-                </li>
-                <li>
                     <Link to="/addDoctor" className="text-white" >
                         <FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/#setting" className="text-white" >
-                        <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
                     </Link>
                 </li>
             </div>}

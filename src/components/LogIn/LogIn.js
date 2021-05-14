@@ -54,8 +54,10 @@ const LogIn = () => {
           newUserInfo.success = false;
           setLoggedInUser(newUserInfo);
         });
-    } //sing in with email and password
-    else {
+    }
+    
+    //sing in with email and password
+    if(!newUser) {
       firebase
         .auth()
         .signInWithEmailAndPassword(data.email, data.password)
