@@ -9,13 +9,13 @@ const Blogs = () => {
       date: "23 April 2019",
     },
     {
-      name: "Rasid Kabir",
-      title: "Check a latest doctor in your aria",
+      name: "Adnan Habib",
+      title: "How to be your tooth white and well",
       date: "23 April 2019",
     },
     {
-      name: "Rasid Kabir",
-      title: "Check a latest doctor in your aria",
+      name: "Justinian Marly",
+      title: "Have you know the best services",
       date: "23 April 2019",
     },
   ];

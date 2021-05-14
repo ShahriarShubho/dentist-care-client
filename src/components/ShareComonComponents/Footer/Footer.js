@@ -43,7 +43,7 @@ const Footer = () => {
                     <strong className="bg-info text-white p-2">+8801817510325</strong>
                 </div>
             </div>
-            <p className="text-center mt-5 text-secondary">Copyright © 2020 Programming-hero.com</p>
+            <p className="text-center mt-5 text-secondary">Copyright © dentist-care.netlify.com</p>
         </section>
     );
 };

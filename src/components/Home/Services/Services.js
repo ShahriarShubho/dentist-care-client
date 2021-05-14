@@ -19,16 +19,16 @@ const Services = () => {
             img : whiting
         },
         {
-            name: 'Florid Treatment',
-            img : florid
+            name: 'Nasal spray',
+            img : 'https://image.flaticon.com/icons/png/128/2522/2522816.png'
         },
         {
-            name: 'Cavity Felling',
-            img : cavity
+            name: 'Mouth wash',
+            img : 'https://image.flaticon.com/icons/png/128/2731/2731387.png'
         },
         {
-            name: 'Teeth Whiting',
-            img : whiting
+            name: 'Teeth repair',
+            img : 'https://image.flaticon.com/icons/png/128/1964/1964696.png'
         }
     ]
     return (

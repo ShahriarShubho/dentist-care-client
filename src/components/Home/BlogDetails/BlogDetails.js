@@ -9,8 +9,7 @@ const BlogDetails = ({ blogs }) => {
         <h6 className="text-left">{blogs.title}</h6>
         <div className="card-body">
         <p className="text-left">
-          hello hio how ar yau Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Rerum, nostrum.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. In eum corrupti dicta quibusdam harum laboriosam.
         </p>
         </div>
       </div>
