@@ -29,7 +29,7 @@ const AppointmentByDate = ({ appointments }) => {
       </Table>
     </div>)
     :
-    (<h4>No appointments</h4>)}
+    (<h4>No appointments in this date</h4>)}
     </>
   );
 };

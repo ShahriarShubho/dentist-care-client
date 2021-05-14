@@ -7,7 +7,7 @@ import { UserContext } from '../../../App';
 
 
 const Sidebar = () => {
-   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+   const [loggedInUser] = useContext(UserContext)
     const [isDoctor, setIsDoctor] = useState(false);
     useEffect(() => {
         fetch('https://dentist-care.herokuapp.com/isDoctors', {
@@ -17,7 +17,7 @@ const Sidebar = () => {
         })
         .then(response => response.json())
         .then(data => setIsDoctor(data))
-    }, [])
+    }, [loggedInUser.email])
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}>
         <ul className="list-unstyled">

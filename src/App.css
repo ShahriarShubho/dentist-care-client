@@ -7,3 +7,25 @@
     margin-top : -80px
   }
 }
+
+.card:hover{
+  background-image: linear-gradient(75deg, #19D3AE,#0fcfec);
+  color: #fff !important;
+ transition: 1s;
+}
+.card:hover .card-body{
+  background-image: url(./images/quote.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 60%;
+  color : rgb(83, 69, 69);
+  transition:  2s  all ease-in-out !important;
+}
+
+.testimonialCard{
+  margin-top: -90px
+}
+
+html {
+  scroll-behavior: smooth;
+}
