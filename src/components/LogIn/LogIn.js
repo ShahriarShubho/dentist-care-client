@@ -7,8 +7,6 @@ import { useHistory, useLocation } from "react-router";
 import logInImg from "../../images/logIn.png";
 import { useForm } from "react-hook-form";
 import "./LogIn.css";
-import Navbars from "../ShareComonComponents/Navbars/Navbars";
-import Footer from "../ShareComonComponents/Footer/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -35,6 +33,7 @@ const LogIn = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    
     //create new account of email and password
     if (newUser) {
       firebase
@@ -66,10 +65,10 @@ const LogIn = () => {
           newUserInfo.error = "";
           newUserInfo.success = true;
           setLoggedInUser(newUserInfo);
-          history.replace(from);
           const { displayName, email } = response.user;
           const userData = { name: displayName, email: email };
           setLoggedInUser(userData);
+          history.replace(from);
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -119,7 +118,6 @@ const LogIn = () => {
 
   return (
     <section>
-      <Navbars />
       <div className="container">
         <div className="row">
           <div className="col-md-6 m-auto">
@@ -191,7 +189,6 @@ const LogIn = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </section>
   );
 };

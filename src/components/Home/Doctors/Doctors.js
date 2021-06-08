@@ -9,27 +9,9 @@ const Doctors = () => {
         .then(res => res.json())
         .then(data => setDoctorData(data))
     }, [])
-    // const doctorData = [
-    //     { 
-    //         name: 'Mr. Alisa Cock',
-    //         title : 'MMBS, FCPS',
-    //         img: doctor
-    //     },
-    //     { 
-    //         name: 'Mr. John Danny',
-    //         title: 'BDS, Dental',
-    //         img: doctor
-    //     },
-    //     { 
-    //         name: 'Mr. Watson Glib',
-    //         title : 'MBBS Medicine',
-    //         img: doctor
-    //     }
-    // ];
-
 
     return (
-        <div className="text-center mt-5 container">
+        <div className="text-center py-5 container">
             <h4 className="text-info">Our Doctors</h4>
             <div className="row mt-4">
                 {

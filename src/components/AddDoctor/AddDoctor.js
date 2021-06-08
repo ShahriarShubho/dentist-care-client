@@ -30,11 +30,15 @@ const AddDoctor = () => {
         })
         .then(response => response.json())
         .then(data => {
-          console.log(data)
+          if(data){
+            alert('Doctor has been added')
+          }
         })
         .catch(error => {
           console.error(error)
         })
+
+        event.preventDefault()
         
       }
     
